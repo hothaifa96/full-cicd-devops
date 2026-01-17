@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ci-cd
-        image: nginx
+        image: grafana/grafana
         resources:
           limits:
             memory: "128Mi"
