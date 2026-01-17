@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ci-cd
-        image: grafana/grafana
+        image: hothaifaz11/cicd-app:V.14
         resources:
           limits:
             memory: "128Mi"
