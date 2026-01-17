@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ci-cd
-        image: hothaifaz11/cicd-app:V.14
+        image: hothaifaz11/cicd-app:V.18
         resources:
           limits:
             memory: "128Mi"
