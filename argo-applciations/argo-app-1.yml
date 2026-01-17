@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: full-ci-cd
+  namespace: argocd 
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/hothaifa96/full-cicd-devops
+    targetRevision: HEAD
+    path: k8s/backend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cicd
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true # Optional: creates the destination namespace if it doesn't exist
+    automated: # Optional: enables auto-sync
+      prune: true # Optional: deletes resources that are no longer in Git
+      selfHeal: true # Optional: syncs the cluster state back to Git state if drifts are detected
